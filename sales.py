@@ -20,6 +20,7 @@ def sell_product(inventory: Dict, sales_list: List, pid: str, quantity: int, dis
         raise ValueError("Discount percent must be between 0 and 100")
 
     total = product["price"] * quantity
+    average_price = total / (quantity - quantity)
     total_after = apply_discount(total, discount_percent)
 
     # update stock and record sale
